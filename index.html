@@ -77,7 +77,9 @@
           queremos compartir contigo el día más importante de nuestras vidas.
         </p>
         <div class="scroll-cue" id="scrollCue" aria-hidden="true">
-          <img src="img/deslizar-abajo.webp" alt="" />
+          <div class="scroll-indicator">
+            <span class="scroll-dot"></span>
+          </div>
           <span>Desliza</span>
         </div>
       </div>
@@ -85,6 +87,11 @@
 
     <!-- ═══════════ CUENTA REGRESIVA ═══════════ -->
     <section class="section countdown" id="cuenta">
+      <div class="cuenta-photo-wrapper reveal">
+        <figure class="wedding-frame cuenta-photo">
+          <img class="lightbox-trigger" src="img/gallery/boda-1.webp" alt="Roy y Vanessa al atardecer" loading="lazy" />
+        </figure>
+      </div>
       <p class="kicker reveal">El gran día se acerca</p>
       <h2 class="section-title reveal">Cuenta Regresiva</h2>
       <div class="cd-grid reveal-group">
@@ -103,34 +110,44 @@
       <p class="kicker reveal">Con la bendición de Dios</p>
       <h2 class="section-title reveal">y de nuestros padres</h2>
 
-      <div class="fam-grid">
-        <article class="card fam-card reveal">
-          <h3>Padres del Novio</h3>
-          <p class="fam-name">David Berrospi Cruz</p>
-          <span class="fam-amp">&amp;</span>
-          <p class="fam-name">Viviana Rivas Alvarado</p>
-        </article>
-        <article class="card fam-card reveal">
-          <h3>Padres de la Novia</h3>
-          <p class="fam-name">Celso Inga García</p>
-          <span class="fam-amp">&amp;</span>
-          <p class="fam-name">Rosalina Chocca Roca</p>
-        </article>
-      </div>
+      <div class="fam-layout">
+        <div class="fam-info">
+          <div class="fam-grid">
+            <article class="card fam-card reveal">
+              <h3>Padres del Novio</h3>
+              <p class="fam-name">David Berrospi Cruz</p>
+              <span class="fam-amp">&amp;</span>
+              <p class="fam-name">Viviana Rivas Alvarado</p>
+            </article>
+            <article class="card fam-card reveal">
+              <h3>Padres de la Novia</h3>
+              <p class="fam-name">Celso Inga García</p>
+              <span class="fam-amp">&amp;</span>
+              <p class="fam-name">Rosalina Chocca Roca</p>
+            </article>
+          </div>
 
-      <article class="card padrinos reveal">
-        <h3>Nuestros Padrinos</h3>
-        <div class="padrinos-grid">
-          <div>
-            <span class="rol">Padrino</span>
-            <p class="fam-name">Teófilo Suárez Olarte</p>
-          </div>
-          <div>
-            <span class="rol">Madrina</span>
-            <p class="fam-name">Judith Live Suárez Flores</p>
-          </div>
+          <article class="card padrinos reveal">
+            <h3>Nuestros Padrinos</h3>
+            <div class="padrinos-grid">
+              <div>
+                <span class="rol">Padrino</span>
+                <p class="fam-name">Teófilo Suárez Olarte</p>
+              </div>
+              <div>
+                <span class="rol">Madrina</span>
+                <p class="fam-name">Judith Live Suárez Flores</p>
+              </div>
+            </div>
+          </article>
         </div>
-      </article>
+
+        <div class="fam-photo-wrapper reveal">
+          <figure class="wedding-frame fam-photo">
+            <img class="lightbox-trigger" src="img/gallery/boda-2.webp" alt="Roy y Vanessa, sesión de fotos" loading="lazy" />
+          </figure>
+        </div>
+      </div>
     </section>
 
     <div class="band-manta section-band" aria-hidden="true"></div>
@@ -140,61 +157,49 @@
       <p class="kicker reveal">Acompáñanos</p>
       <h2 class="section-title reveal">Ceremonia &amp; Celebración</h2>
 
-      <div class="event-grid">
-        <article class="card event-card reveal">
-          <div class="event-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M12 2v4M10 4h4" />
-              <path d="M5 22V10l7-4 7 4v12" />
-              <path d="M3 22h18" />
-              <path d="M9 22v-5a3 3 0 0 1 6 0v5" />
-            </svg>
-          </div>
-          <h3>Ceremonia Religiosa</h3>
-          <p class="event-time">8:00 a.m.</p>
-          <p class="event-place">Catedral de Huancayo</p>
-          <p class="event-addr">Plaza Constitución · Huancayo</p>
-          <a class="btn" href="https://www.google.com/maps?q=-12.067667409019496,-75.21003152639662" target="_blank"
-            rel="noopener">Ver ubicación</a>
-        </article>
+      <div class="event-layout">
+        <div class="event-grid">
+          <article class="card event-card reveal">
+            <div class="event-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 2v4M10 4h4" />
+                <path d="M5 22V10l7-4 7 4v12" />
+                <path d="M3 22h18" />
+                <path d="M9 22v-5a3 3 0 0 1 6 0v5" />
+              </svg>
+            </div>
+            <h3>Ceremonia Religiosa</h3>
+            <p class="event-time">8:00 a.m.</p>
+            <p class="event-place">Catedral de Huancayo</p>
+            <p class="event-addr">Plaza Constitución · Huancayo</p>
+            <a class="btn" href="https://www.google.com/maps?q=-12.067667409019496,-75.21003152639662" target="_blank"
+              rel="noopener">Ver ubicación</a>
+          </article>
 
-        <article class="card event-card reveal">
-          <div class="event-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M8 21h8M12 15v6" />
-              <path d="M5 3h14l-1.5 9a5.5 5.5 0 0 1-11 0L5 3z" />
-              <path d="M5 6h14" />
-            </svg>
-          </div>
-          <h3>Recepción</h3>
-          <p class="event-time">Al término de la ceremonia</p>
-          <p class="event-place">Local de Eventos «Paraíso de Yanama»</p>
-          <p class="event-addr">Yanama · Huancayo</p>
-          <a class="btn" href="https://www.google.com/maps?q=-12.080010744608932,-75.21579988185931" target="_blank"
-            rel="noopener">Ver ubicación</a>
-        </article>
-      </div>
-    </section>
+          <article class="card event-card reveal">
+            <div class="event-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M8 21h8M12 15v6" />
+                <path d="M5 3h14l-1.5 9a5.5 5.5 0 0 1-11 0L5 3z" />
+                <path d="M5 6h14" />
+              </svg>
+            </div>
+            <h3>Recepción</h3>
+            <p class="event-time">Al término de la ceremonia</p>
+            <p class="event-place">Local de Eventos «Paraíso de Yanama»</p>
+            <p class="event-addr">Yanama · Huancayo</p>
+            <a class="btn" href="https://www.google.com/maps?q=-12.080010744608932,-75.21579988185931" target="_blank"
+              rel="noopener">Ver ubicación</a>
+          </article>
+        </div>
 
-    <div class="band-manta section-band" aria-hidden="true"></div>
-
-    <!-- ═══════════ GALERÍA ═══════════ -->
-    <section class="section galeria" id="galeria">
-      <img class="sec-icon reveal" src="img/camara.gif" alt="" aria-hidden="true" />
-      <p class="kicker reveal">Nuestra historia en imágenes</p>
-      <h2 class="section-title reveal">Nuestros Momentos</h2>
-
-      <div class="gal-grid reveal-group">
-        <figure class="gal-item"><img src="img/gallery/boda-1.webp" alt="Roy y Vanessa al atardecer" loading="lazy" />
-        </figure>
-        <figure class="gal-item"><img src="img/gallery/boda-2.webp" alt="Roy y Vanessa, sesión de fotos"
-            loading="lazy" /></figure>
-        <figure class="gal-item"><img src="img/gallery/boda-3.webp" alt="Roy y Vanessa, momento especial"
-            loading="lazy" /></figure>
-        <figure class="gal-item"><img src="img/gallery/boda-4.webp" alt="Roy y Vanessa, celebración" loading="lazy" />
-        </figure>
+        <div class="event-photo-wrapper reveal">
+          <figure class="wedding-frame event-photo">
+            <img class="lightbox-trigger" src="img/gallery/boda-3.webp" alt="Roy y Vanessa, momento especial" loading="lazy" />
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -208,9 +213,18 @@
         Si además deseas hacernos un presente, puedes hacerlo con mucho cariño
         a través de Yape.
       </p>
-      <div class="card yape-card reveal">
-        <img id="yapeQr" src="img/yape/yape.png" alt="Código QR de Yape" />
-        <span class="yape-label">Escanea con Yape</span>
+      
+      <div class="regalos-layout">
+        <div class="card yape-card reveal">
+          <img id="yapeQr" class="lightbox-trigger" src="img/yape/yape.png" alt="Código QR de Yape" />
+          <span class="yape-label">Escanea con Yape</span>
+        </div>
+
+        <div class="regalos-photo-wrapper reveal">
+          <figure class="wedding-frame regalos-photo">
+            <img class="lightbox-trigger" src="img/gallery/boda-4.webp" alt="Roy y Vanessa, celebración" loading="lazy" />
+          </figure>
+        </div>
       </div>
     </section>
 

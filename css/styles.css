@@ -539,27 +539,72 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .3rem;
-  font-size: .72rem;
+  gap: .35rem;
+  font-size: .75rem;
+  font-weight: 600;
   letter-spacing: .35em;
   text-transform: uppercase;
-  color: var(--tinta-suave);
+  color: var(--fucsia-2);
+  text-shadow: 0 1px 3px rgba(255, 253, 248, 0.9), 0 0 8px rgba(255, 253, 248, 0.6);
   animation: cue-bounce 2.2s ease-in-out infinite;
 }
 
-.scroll-cue img {
-  width: 34px;
+.scroll-indicator {
+  width: 22px;
+  height: 36px;
+  border: 2px solid var(--fucsia-2);
+  border-radius: 999px;
+  position: relative;
+  display: block;
+  margin-bottom: 6px;
+  background: rgba(255, 251, 243, 0.9);
+  box-shadow: 0 3px 10px rgba(164, 19, 60, 0.2), inset 0 1px 4px rgba(255, 255, 255, 1);
+  opacity: 0.95;
+}
+
+.scroll-dot {
+  width: 3px;
+  height: 6px;
+  background-color: var(--fucsia);
+  border-radius: 999px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel-slide 2s ease-in-out infinite;
+}
+
+@keyframes scroll-wheel-slide {
+  0% {
+    top: 6px;
+    opacity: 1;
+    height: 6px;
+  }
+  30% {
+    top: 6px;
+    opacity: 1;
+    height: 12px;
+  }
+  60% {
+    top: 20px;
+    opacity: 0;
+    height: 6px;
+  }
+  100% {
+    top: 6px;
+    opacity: 0;
+    height: 6px;
+  }
 }
 
 @keyframes cue-bounce {
-
   0%,
   100% {
     transform: translate(-50%, 0);
   }
 
   50% {
-    transform: translate(-50%, 10px);
+    transform: translate(-50%, 8px);
   }
 }
 
@@ -788,42 +833,125 @@ img {
   outline-offset: 3px;
 }
 
-/* ── Galería ── */
-.sec-icon {
-  width: 76px;
-  margin: 0 auto .6rem;
-  filter: drop-shadow(0 8px 16px rgba(74, 44, 42, .2));
-}
-
-.gal-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-.gal-item {
-  border-radius: 16px;
-  overflow: hidden;
+/* ── Lightbox Trigger & Marcos de Boda Elegantes ── */
+.lightbox-trigger {
   cursor: zoom-in;
-  border: 1px solid rgba(217, 164, 65, .5);
-  box-shadow: 0 14px 30px -14px rgba(74, 44, 42, .4);
+  transition: transform .5s cubic-bezier(.2, .6, .2, 1), filter .3s ease;
+}
+
+.lightbox-trigger:hover {
+  transform: scale(1.04);
+  filter: brightness(1.03);
+}
+
+.wedding-frame {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid rgba(217, 164, 65, .65);
+  outline: 1px solid rgba(217, 164, 65, .25);
+  outline-offset: 6px;
+  background: var(--papel);
+  box-shadow: var(--sombra-card);
   transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.gal-item img {
+.wedding-frame img {
   width: 100%;
-  aspect-ratio: 2 / 3;
+  height: 100%;
   object-fit: cover;
-  transition: transform .6s cubic-bezier(.2, .6, .2, 1);
 }
 
-.gal-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 40px -14px rgba(164, 19, 60, .45);
+.wedding-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 50px -15px rgba(164, 19, 60, .35);
 }
 
-.gal-item:hover img {
-  transform: scale(1.07);
+/* Arco superior elegante (tipo ojival/tradicional) */
+.wedding-frame.cuenta-photo,
+.wedding-frame.fam-photo,
+.wedding-frame.event-photo,
+.wedding-frame.regalos-photo {
+  border-radius: 999px 999px 20px 20px;
+}
+
+.wedding-frame.cuenta-photo img,
+.wedding-frame.fam-photo img,
+.wedding-frame.event-photo img,
+.wedding-frame.regalos-photo img {
+  border-radius: 999px 999px 12px 12px;
+}
+
+/* Ajustes de layouts específicos */
+/* Cuenta regresiva */
+.cuenta-photo-wrapper {
+  max-width: 440px;
+  width: 90%;
+  margin: 3rem auto 1rem;
+}
+
+.cuenta-photo {
+  aspect-ratio: 3 / 4;
+}
+
+/* Familia */
+.fam-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.fam-photo-wrapper {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.fam-photo {
+  aspect-ratio: 2 / 3;
+}
+
+/* Evento */
+.event-layout {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.event-photo-wrapper {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.event-photo {
+  aspect-ratio: 2 / 3;
+}
+
+/* Regalos */
+.regalos-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  max-width: 860px;
+  margin: 2.5rem auto 0;
+  flex-wrap: wrap;
+}
+
+.regalos-photo-wrapper {
+  width: 100%;
+  max-width: 300px;
+}
+
+.regalos-photo {
+  aspect-ratio: 3 / 4;
 }
 
 /* ── Regalos ── */
@@ -1041,8 +1169,10 @@ img {
 
 /* ═══════════ RESPONSIVE ═══════════ */
 @media (max-width: 860px) {
-  .gal-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .fam-layout,
+  .event-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 

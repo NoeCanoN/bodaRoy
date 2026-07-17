@@ -197,7 +197,7 @@
     window.setTimeout(function () { lightboxImg.src = ''; }, 380);
   }
 
-  document.querySelectorAll('.gal-item img, #yapeQr').forEach(function (img) {
+  document.querySelectorAll('.lightbox-trigger').forEach(function (img) {
     img.addEventListener('click', function () {
       openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
     });

@@ -1,0 +1,9 @@
+{
+  "name": "boda-roy-vanessa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Invitación de boda · Roy & Vanessa · 31.10.2026 · Huancayo",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roy &amp; Vanessa · Nuestra Boda — 31.10.2026</title>
+  <meta name="description" content="Invitación de boda de Roy David Berrospi Rivas y Vanessa Edith Inga Chocca · 31 de Octubre de 2026 · Huancayo, Perú" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="locked">
+
+  <!-- Capa de pétalos flotantes -->
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- ═══════════ SOBRE / PORTADA ═══════════ -->
+  <div class="envelope-overlay" id="envelopeOverlay" role="dialog" aria-label="Abrir invitación">
+    <div class="band-manta band-top"></div>
+    <div class="band-manta band-bottom"></div>
+
+    <img class="env-flores env-flores-l" src="img/flores.webp" alt="" aria-hidden="true" />
+    <img class="env-flores env-flores-r" src="img/flores.webp" alt="" aria-hidden="true" />
+
+    <p class="env-kicker reveal-env">Has recibido una invitación</p>
+
+    <div class="envelope" id="envelope">
+      <img class="env-half env-left"  src="img/sobre-izq.webp" alt="" aria-hidden="true" />
+      <img class="env-half env-right" src="img/sobre-der.webp" alt="" aria-hidden="true" />
+      <button class="env-seal" id="openBtn" aria-label="Abrir invitación">
+        <img src="img/sello-entrar.webp" alt="Sello dorado · Entrar" />
+      </button>
+    </div>
+
+    <p class="env-names reveal-env">Roy <span>&amp;</span> Vanessa</p>
+    <p class="env-hint reveal-env">Toca el sello dorado para abrir</p>
+  </div>
+
+  <!-- Botón de música -->
+  <button class="music-toggle" id="musicToggle" aria-label="Encender o apagar la música" aria-pressed="false">
+    <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="music-note" aria-hidden="true">♪</span>
+  </button>
+  <audio id="bgMusic" src="audio/musica.mp3" loop preload="auto"></audio>
+
+  <main id="contenido">
+
+    <!-- ═══════════ PORTADA / HERO ═══════════ -->
+    <header class="hero" id="inicio">
+      <div class="hero-garland garland-top" aria-hidden="true"><img src="img/marco.png" alt="" /></div>
+      <div class="hero-garland garland-bottom" aria-hidden="true"><img src="img/marco.png" alt="" /></div>
+
+      <img class="mariposa m1" src="img/mariposa.gif" alt="" aria-hidden="true" />
+      <img class="mariposa m2" src="img/mariposa.gif" alt="" aria-hidden="true" />
+      <img class="mariposa m3" src="img/mariposa.gif" alt="" aria-hidden="true" />
+
+      <div class="hero-inner">
+        <img class="hero-flores" id="heroFlores" src="img/flores.webp" alt="Ramillete de flores del Mantaro" />
+        <p class="kicker" id="heroKicker">¡Nos casamos!</p>
+        <h1 class="names" id="heroNames">
+          <span class="name">Roy David</span>
+          <em class="amp">&amp;</em>
+          <span class="name">Vanessa Edith</span>
+        </h1>
+        <p class="hero-date" id="heroDate">Sábado · 31 de Octubre de 2026</p>
+        <div class="divider-manta" id="heroDivider" aria-hidden="true"></div>
+        <p class="hero-verse" id="heroVerse">
+          Con la alegría de nuestra tierra y las flores del valle del Mantaro,<br />
+          queremos compartir contigo el día más importante de nuestras vidas.
+        </p>
+      </div>
+
+      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+        <img src="img/deslizar-abajo.webp" alt="" />
+        <span>Desliza</span>
+      </div>
+    </header>
+
+    <!-- ═══════════ CUENTA REGRESIVA ═══════════ -->
+    <section class="section countdown" id="cuenta">
+      <p class="kicker reveal">El gran día se acerca</p>
+      <h2 class="section-title reveal">Cuenta Regresiva</h2>
+      <div class="cd-grid reveal-group">
+        <div class="cd-card"><span class="cd-num" id="cdDias">00</span><span class="cd-label">Días</span></div>
+        <div class="cd-card"><span class="cd-num" id="cdHoras">00</span><span class="cd-label">Horas</span></div>
+        <div class="cd-card"><span class="cd-num" id="cdMin">00</span><span class="cd-label">Minutos</span></div>
+        <div class="cd-card"><span class="cd-num" id="cdSeg">00</span><span class="cd-label">Segundos</span></div>
+      </div>
+      <p class="cd-msg" id="cdMsg" role="status"></p>
+    </section>
+
+    <div class="band-manta section-band" aria-hidden="true"></div>
+
+    <!-- ═══════════ FAMILIA ═══════════ -->
+    <section class="section familia" id="familia">
+      <p class="kicker reveal">Con la bendición de Dios</p>
+      <h2 class="section-title reveal">y de nuestros padres</h2>
+
+      <div class="fam-grid">
+        <article class="card fam-card reveal">
+          <h3>Padres del Novio</h3>
+          <p class="fam-name">David Berrospi Cruz</p>
+          <span class="fam-amp">&amp;</span>
+          <p class="fam-name">Viviana Rivas Alvarado</p>
+        </article>
+        <article class="card fam-card reveal">
+          <h3>Padres de la Novia</h3>
+          <p class="fam-name">Celso Inga García</p>
+          <span class="fam-amp">&amp;</span>
+          <p class="fam-name">Rosalina Chocca Roca</p>
+        </article>
+      </div>
+
+      <article class="card padrinos reveal">
+        <h3>Nuestros Padrinos</h3>
+        <div class="padrinos-grid">
+          <div>
+            <span class="rol">Padrino</span>
+            <p class="fam-name">Teófilo Suárez Olarte</p>
+          </div>
+          <div>
+            <span class="rol">Madrina</span>
+            <p class="fam-name">Judith Live Suárez Flores</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="band-manta section-band" aria-hidden="true"></div>
+
+    <!-- ═══════════ CEREMONIA Y RECEPCIÓN ═══════════ -->
+    <section class="section evento" id="evento">
+      <p class="kicker reveal">Acompáñanos</p>
+      <h2 class="section-title reveal">Ceremonia &amp; Celebración</h2>
+
+      <div class="event-grid">
+        <article class="card event-card reveal">
+          <div class="event-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M10 4h4"/><path d="M5 22V10l7-4 7 4v12"/><path d="M3 22h18"/><path d="M9 22v-5a3 3 0 0 1 6 0v5"/></svg>
+          </div>
+          <h3>Ceremonia Religiosa</h3>
+          <p class="event-time">8:00 a.m.</p>
+          <p class="event-place">Catedral de Huancayo</p>
+          <p class="event-addr">Plaza Constitución · Huancayo</p>
+          <a class="btn" href="https://www.google.com/maps?q=-12.067667409019496,-75.21003152639662" target="_blank" rel="noopener">Ver ubicación</a>
+        </article>
+
+        <article class="card event-card reveal">
+          <div class="event-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 15v6"/><path d="M5 3h14l-1.5 9a5.5 5.5 0 0 1-11 0L5 3z"/><path d="M5 6h14"/></svg>
+          </div>
+          <h3>Recepción</h3>
+          <p class="event-time">Al término de la ceremonia</p>
+          <p class="event-place">Local de Eventos «Paraíso de Yanama»</p>
+          <p class="event-addr">Yanama · Huancayo</p>
+          <a class="btn" href="https://www.google.com/maps?q=-12.080010744608932,-75.21579988185931" target="_blank" rel="noopener">Ver ubicación</a>
+        </article>
+      </div>
+    </section>
+
+    <div class="band-manta section-band" aria-hidden="true"></div>
+
+    <!-- ═══════════ GALERÍA ═══════════ -->
+    <section class="section galeria" id="galeria">
+      <img class="sec-icon reveal" src="img/camara.gif" alt="" aria-hidden="true" />
+      <p class="kicker reveal">Nuestra historia en imágenes</p>
+      <h2 class="section-title reveal">Nuestros Momentos</h2>
+
+      <div class="gal-grid reveal-group">
+        <figure class="gal-item"><img src="img/gallery/boda-1.webp" alt="Roy y Vanessa al atardecer" loading="lazy" /></figure>
+        <figure class="gal-item"><img src="img/gallery/boda-2.webp" alt="Roy y Vanessa, sesión de fotos" loading="lazy" /></figure>
+        <figure class="gal-item"><img src="img/gallery/boda-3.webp" alt="Roy y Vanessa, momento especial" loading="lazy" /></figure>
+        <figure class="gal-item"><img src="img/gallery/boda-4.webp" alt="Roy y Vanessa, celebración" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <div class="band-manta section-band" aria-hidden="true"></div>
+
+    <!-- ═══════════ REGALOS ═══════════ -->
+    <section class="section regalos" id="regalos">
+      <p class="kicker reveal">Tu presencia es nuestro mejor regalo</p>
+      <h2 class="section-title reveal">Lluvia de Sobres</h2>
+      <p class="regalos-text reveal">
+        Si además deseas hacernos un presente, puedes hacerlo con mucho cariño
+        a través de Yape.
+      </p>
+      <div class="card yape-card reveal">
+        <img id="yapeQr" src="img/yape/yape.png" alt="Código QR de Yape" />
+        <span class="yape-label">Escanea con Yape</span>
+      </div>
+    </section>
+
+    <div class="band-manta section-band" aria-hidden="true"></div>
+
+    <!-- ═══════════ DESPEDIDA ═══════════ -->
+    <section class="section final" id="final">
+      <img class="sec-icon reveal" src="img/corazon.gif" alt="" aria-hidden="true" />
+      <figure class="final-photo reveal">
+        <img src="img/pareja.webp" alt="Roy y Vanessa al atardecer en el campo" loading="lazy" />
+      </figure>
+      <p class="final-quote reveal">
+        «Y de pronto, entre mil caminos, nos encontramos…<br />
+        y supimos que era para siempre.»
+      </p>
+      <p class="final-names reveal">Roy <span>&amp;</span> Vanessa</p>
+      <p class="final-wait reveal">¡Te esperamos!</p>
+    </section>
+
+    <footer class="footer">
+      <div class="band-manta" aria-hidden="true"></div>
+      <p>Hecho con amor · Huancayo — Perú · 31.10.2026</p>
+    </footer>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+    <img id="lightboxImg" src="" alt="Fotografía ampliada" />
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

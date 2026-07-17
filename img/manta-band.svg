@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="28" viewBox="0 0 160 28">
+  <!-- zigzag superior e inferior estilo manta wanka -->
+  <path d="M0 4 L10 8 L20 4 L30 8 L40 4 L50 8 L60 4 L70 8 L80 4 L90 8 L100 4 L110 8 L120 4 L130 8 L140 4 L150 8 L160 4"
+        fill="none" stroke="#D9A441" stroke-width="1.5"/>
+  <path d="M0 24 L10 20 L20 24 L30 20 L40 24 L50 20 L60 24 L70 20 L80 24 L90 20 L100 24 L110 20 L120 24 L130 20 L140 24 L150 20 L160 24"
+        fill="none" stroke="#D9A441" stroke-width="1.5"/>
+  <!-- rombos andinos -->
+  <g>
+    <polygon points="20,7 27,14 20,21 13,14" fill="#C9184A"/>
+    <polygon points="20,10.5 23.5,14 20,17.5 16.5,14" fill="#FFB703"/>
+
+    <polygon points="60,7 67,14 60,21 53,14" fill="#2A9D8F"/>
+    <polygon points="60,10.5 63.5,14 60,17.5 56.5,14" fill="#FFD166"/>
+
+    <polygon points="100,7 107,14 100,21 93,14" fill="#E36414"/>
+    <polygon points="100,10.5 103.5,14 100,17.5 96.5,14" fill="#FFE3A3"/>
+
+    <polygon points="140,7 147,14 140,21 133,14" fill="#6D3B8E"/>
+    <polygon points="140,10.5 143.5,14 140,17.5 136.5,14" fill="#F4A259"/>
+  </g>
+</svg>

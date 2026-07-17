@@ -1044,6 +1044,113 @@ img {
   color: var(--morado);
 }
 
+/* ── Vestimenta ── */
+.vestimenta-layout {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.vestimenta-card {
+  text-align: center;
+  padding: 3rem 2rem 2.5rem;
+}
+
+.vestimenta-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dorado-2);
+  background: linear-gradient(145deg, #fffbf3, #fff6e8);
+  border: 1px solid rgba(217, 164, 65, .35);
+}
+
+.vestimenta-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.vestimenta-tipo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--fucsia-2);
+  margin-bottom: .6rem;
+}
+
+.vestimenta-desc {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  font-size: 0.98rem;
+  color: var(--tinta-suave);
+  line-height: 1.6;
+}
+
+.colores-sugeridos {
+  border-top: 1px dashed rgba(217, 164, 65, .35);
+  padding-top: 1.8rem;
+}
+
+.colores-titulo {
+  font-family: var(--font-sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  margin-bottom: 1.2rem;
+}
+
+.colores-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.color-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.color-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 2px solid #fff;
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.color-item:hover .color-circle {
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.color-name {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--tinta-suave);
+  letter-spacing: .05em;
+}
+
+.colores-nota {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--fucsia);
+  margin-top: 1rem;
+}
+
 /* ── Despedida ── */
 .final {
   text-align: center;

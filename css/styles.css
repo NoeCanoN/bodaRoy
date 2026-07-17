@@ -191,11 +191,11 @@ img {
 }
 
 .env-left {
-  left: calc(-55% + 5px);
+  left: calc(-30% + 5px);
 }
 
 .env-right {
-  left: calc(55% - 5px);
+  left: calc(30% - 5px);
 }
 
 .envelope-overlay.opened .env-left {

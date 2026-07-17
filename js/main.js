@@ -47,23 +47,35 @@
   function openEnvelope() {
     if (opened) { return; }
     opened = true;
-    overlay.classList.add('opened');
-    document.body.classList.remove('locked');
-    playMusic(); // gesto del usuario: habilita el audio
-    
-    // Entrar en modo pantalla completa
+
+    function proceed() {
+      overlay.classList.add('opened');
+      document.body.classList.remove('locked');
+      playMusic();
+      heroIntro();
+      window.setTimeout(function () {
+        overlay.style.display = 'none';
+      }, 1600);
+    }
+
     var docEl = document.documentElement;
     var requestFS = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullscreen || docEl.msRequestFullscreen;
     if (requestFS) {
-      requestFS.call(docEl).catch(function (err) {
-        console.log("Error al intentar activar pantalla completa:", err);
-      });
+      var promise = requestFS.call(docEl);
+      if (promise && typeof promise.then === 'function') {
+        promise.then(function () {
+          // Esperamos un instante corto para que se estabilice el redibujado de la pantalla
+          window.setTimeout(proceed, 200);
+        }).catch(function (err) {
+          console.log("Error al intentar activar pantalla completa:", err);
+          proceed();
+        });
+      } else {
+        proceed();
+      }
+    } else {
+      proceed();
     }
-    
-    heroIntro();
-    window.setTimeout(function () {
-      overlay.style.display = 'none';
-    }, 1600);
   }
 
   openBtn.addEventListener('click', openEnvelope);

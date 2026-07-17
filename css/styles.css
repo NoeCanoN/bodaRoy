@@ -501,6 +501,7 @@ img {
   color: var(--tinta-suave);
   max-width: 620px;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .mariposa {

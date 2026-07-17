@@ -50,6 +50,16 @@
     overlay.classList.add('opened');
     document.body.classList.remove('locked');
     playMusic(); // gesto del usuario: habilita el audio
+    
+    // Entrar en modo pantalla completa
+    var docEl = document.documentElement;
+    var requestFS = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullscreen || docEl.msRequestFullscreen;
+    if (requestFS) {
+      requestFS.call(docEl).catch(function (err) {
+        console.log("Error al intentar activar pantalla completa:", err);
+      });
+    }
+    
     heroIntro();
     window.setTimeout(function () {
       overlay.style.display = 'none';

@@ -1006,9 +1006,9 @@ img {
 .regalos-layout {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 3.5rem;
-  max-width: 860px;
+  align-items: stretch;
+  gap: 2.2rem;
+  max-width: 1040px;
   margin: 2.5rem auto 0;
   flex-wrap: wrap;
 }
@@ -1016,15 +1016,18 @@ img {
 .regalos-photo-wrapper {
   width: 100%;
   max-width: 300px;
+  display: flex;
+  align-items: center;
 }
 
 .regalos-photo {
+  width: 100%;
   aspect-ratio: 3 / 4;
 }
 
 /* ── Regalos ── */
 .regalos-text {
-  max-width: 520px;
+  max-width: 540px;
   margin: 0 auto 1.8rem;
   text-align: center;
   font-family: var(--font-serif);
@@ -1033,31 +1036,236 @@ img {
 }
 
 .yape-card {
-  max-width: 300px;
+  max-width: 340px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 1.6rem 1.4rem 1.3rem;
+  padding: 1.8rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yape-header {
+  margin-bottom: 0.8rem;
+}
+
+.yape-badge {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--morado);
+  letter-spacing: 0.05em;
 }
 
 .yape-card img {
   width: 100%;
+  max-width: 220px;
   border-radius: 12px;
   cursor: zoom-in;
   transition: transform .35s ease;
+  box-shadow: 0 4px 12px rgba(109, 59, 142, 0.15);
 }
 
 .yape-card img:hover {
   transform: scale(1.03);
 }
 
-.yape-label {
-  display: block;
-  margin-top: .9rem;
-  font-size: .75rem;
+.yape-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.btn-download-qr {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: .3em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  text-decoration: none;
   color: var(--morado);
+  background: rgba(109, 59, 142, 0.08);
+  border: 1px solid rgba(109, 59, 142, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-download-qr:hover {
+  background: var(--morado);
+  color: #fff;
+  border-color: var(--morado);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(109, 59, 142, 0.3);
+}
+
+.btn-download-qr svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Tarjeta Banco ── */
+.banco-card {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1.8rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banco-header {
+  margin-bottom: 1.2rem;
+}
+
+.banco-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dorado-2);
+  background: linear-gradient(145deg, #fffbf3, #fff6e8);
+  border: 1px solid rgba(217, 164, 65, .35);
+  box-shadow: 0 4px 12px rgba(217, 164, 65, .15);
+}
+
+.banco-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.banco-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--fucsia-2);
+  margin-bottom: 0;
+}
+
+.banco-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.banco-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(217, 164, 65, 0.25);
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.banco-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--naranja);
+  margin-bottom: 0.25rem;
+}
+
+.banco-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.banco-num {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--tinta);
+  letter-spacing: 0.02em;
+  word-break: break-all;
+}
+
+.banco-titular {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--tinta);
+  letter-spacing: 0.02em;
+}
+
+.banco-tag {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--tinta-suave);
+  margin-top: 0.05rem;
+}
+
+.btn-copy {
+  background: rgba(201, 24, 74, 0.08);
+  border: 1px solid rgba(201, 24, 74, 0.22);
+  color: var(--fucsia-2);
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.btn-copy:hover {
+  background: var(--fucsia-2);
+  color: #fff;
+  border-color: var(--fucsia-2);
+  transform: scale(1.08);
+}
+
+.btn-copy svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-copy.copied {
+  background: #2a9d8f;
+  color: #fff;
+  border-color: #2a9d8f;
+}
+
+.btn-copy.copied::after {
+  content: '¡Copiado!';
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--tinta);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
 /* ── Vestimenta ── */

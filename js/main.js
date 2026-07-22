@@ -221,4 +221,39 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) { closeLightbox(); }
   });
+
+  /* ───────────────── COPIAR DATOS BANCARIOS ───────────────── */
+  document.querySelectorAll('.btn-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var textToCopy = btn.getAttribute('data-copy');
+      if (!textToCopy) return;
+
+      function showCopied() {
+        btn.classList.add('copied');
+        window.setTimeout(function () {
+          btn.classList.remove('copied');
+        }, 2000);
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(textToCopy).then(showCopied).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        var tempInput = document.createElement('input');
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showCopied();
+        } catch (e) {
+          console.log('Error al copiar:', e);
+        }
+        document.body.removeChild(tempInput);
+      }
+    });
+  });
 })();

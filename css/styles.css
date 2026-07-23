@@ -766,7 +766,7 @@ img {
 
 .card h3 {
   font-family: var(--font-sans);
-  font-size: .8rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: .32em;
   text-transform: uppercase;
@@ -789,7 +789,7 @@ img {
 
 .fam-name {
   font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-size: clamp(1.85rem, 3vw, 1.45rem);
   font-weight: 500;
   color: var(--tinta);
 }
@@ -863,13 +863,13 @@ img {
 
 .event-place {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.85rem;
   font-weight: 500;
   color: var(--tinta);
 }
 
 .event-addr {
-  font-size: .9rem;
+  font-size: 1.15rem;
   color: var(--tinta-suave);
   letter-spacing: .06em;
   margin-bottom: 1.4rem;
@@ -1264,7 +1264,7 @@ img {
   border-radius: 4px;
   white-space: nowrap;
   pointer-events: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 
